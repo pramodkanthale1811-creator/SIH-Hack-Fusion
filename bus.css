@@ -1,0 +1,161 @@
+/* Reset & Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #cce7ff, #e6f2ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #007acc;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+  text-decoration: underline;
+}
+
+/* Summary Container */
+.summary-container {
+  margin-top: 90px; /* offset for navbar */
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.summary-item {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Main Two-Column Layout */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+}
+
+/* Left - Bus Info */
+.bus-info-container {
+  flex: 1;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  color: #333;
+  animation: fadeIn 0.8s ease;
+}
+
+.bus-info-container h2 {
+  color: #007acc;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.bus-details p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.bus-details p b {
+  color: #005f99;
+}
+
+/* Right - Bus Photo */
+.bus-photo-container {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.bus-photo-container h2 {
+  margin-bottom: 15px;
+  color: #007acc;
+}
+
+.bus-photo-container img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Map Container */
+.map-container {
+  margin: 20px auto 40px auto;
+  width: 90%;
+  max-width: 1200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.map-container h2 {
+  margin-bottom: 15px;
+  color: #007acc;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  border: 2px solid #cce0f5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

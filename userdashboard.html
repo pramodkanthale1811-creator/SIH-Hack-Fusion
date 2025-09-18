@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard - Bus Tracker</title>
+  <link rel="stylesheet" href="userstyle.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🚍 Smart Bus Tracker</div>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Map</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="dashboard-container">
+    <h2>🔎 Search for a Bus</h2>
+    <div class="search-box">
+      <input type="text" id="busNumber" placeholder="Enter Bus Number..." />
+      <button onclick="searchBus()">Search</button>
+    </div>
+    <div id="resultBox" class="result-box">
+      <!-- Results will appear here -->
+    </div>
+  </div>
+
+  <script>
+    function searchBus() {
+      const busNumber = document.getElementById("busNumber").value.trim();
+      const resultBox = document.getElementById("resultBox");
+
+      if (busNumber === "") {
+        resultBox.innerHTML = "<p class='error'>⚠️ Please enter a bus number.</p>";
+        return;
+      }
+
+      // Mock search result (later replace with API call)
+      if (busNumber === "101") {
+        resultBox.innerHTML = `
+          <h3>Bus ${busNumber} Details:</h3>
+          <p><b>Route:</b> Central Station → Airport</p>
+          <p><b>Current Location:</b> Near City Mall</p>
+          <p><b>Estimated Arrival:</b> 15 mins</p>
+        `;
+      } else {
+        resultBox.innerHTML = `<p class='error'>❌ Bus ${busNumber} not found.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

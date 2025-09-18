@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Info - Smart Tracker</title>
+  <link rel="stylesheet" href="bus.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🚍 Smart Bus Tracker</div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">About</a></li>
+      <li><a href="dashboard.html">Contact</a></li>
+      <li><a href="map.html">Map</a></li>
+    </ul>
+  </nav>
+
+  <!-- Summary Container -->
+  <div class="summary-container">
+    <div class="summary-item">
+      📍 <b>Current Location:</b> Model Town, Jalandhar
+    </div>
+    <div class="summary-item">
+      ⏱️ <b>ETA Required time to reach at u: </b> 12 minutes
+    </div>
+  </div>
+
+  <!-- Main Content (Two Columns) -->
+  <div class="main-content">
+    <!-- Left: Bus Info -->
+    <div class="bus-info-container">
+      <h2>Bus 101 - Central Station → Jalandhar University</h2>
+      <div class="bus-details">
+        <p><b>Current Location:</b> Near Model Town, Jalandhar</p>
+        <p><b>Next Stop:</b> Bus Stand Jalandhar</p>
+        <p><b>Estimated Arrival:</b> 12 mins</p>
+        <p><b>Status:</b> 🟢 On Time</p>
+        <p><b>Speed:</b> 38 km/h</p>
+        <p><b>Crowd Level:</b> Medium (60% seats filled)</p>
+      </div>
+    </div>
+
+    <!-- Right: Bus Photo -->
+    <div class="bus-photo-container">
+      <h2>🚌 Bus Preview</h2>
+      <img src="bus.jpg" alt="Bus Image">
+    </div>
+  </div>
+
+  <!-- Map Section -->
+  <div class="map-container">
+    <h2>🗺️ Live Location - Jalandhar</h2>
+    <div id="map"></div>
+  </div>
+
+  <script src="bus-info.js"></script>
+</body>
+</html>

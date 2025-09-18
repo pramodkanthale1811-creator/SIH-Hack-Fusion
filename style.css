@@ -1,0 +1,153 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background with animated dots + lines */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: #e6f2ff; /* fallback */
+}
+
+/* Motion layer (dots + lines) */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 400%;
+  height: 100%;
+  
+  /* Dots + Lines effect using gradients */
+  background-image:
+    radial-gradient(circle, rgba(0,122,204,0.25) 3px, transparent 4px), /* bus stops (dots) */
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,122,204,0.08) 0px,
+      rgba(0,122,204,0.08) 2px,
+      transparent 2px,
+      transparent 100px
+    ); /* route lines */
+  
+  background-size: 60px 60px, auto; /* grid for dots, wide for lines */
+  
+  animation: moveBg 12s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes moveBg {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-120px);
+  }
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Login Box */
+.login-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  animation: fadeIn 1s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007acc;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cce0f5;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border: 1px solid #007acc;
+  box-shadow: 0 0 5px rgba(0, 122, 204, 0.5);
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #007acc;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #005f99;
+}
+
+/* Links */
+.links {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.links a {
+  margin: 0 10px;
+  color: #007acc;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
